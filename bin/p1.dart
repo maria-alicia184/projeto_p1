@@ -32,8 +32,12 @@ double dadoMagico(Random gerador) {
 void main() {
   var gerador = Random();
   int opcao;
+  String nomeUsuario;
+  int soma;
 
-  // Exibir menu de opções (0 para sair e 1 a 50 para número de rodadas)
+  // Exibir menu de opções
+  stdout.writeln('Digite seu nome:');
+  nomeUsuario = stdin.readLineSync()!;
   stdout.writeln('Menu de opções\n0 - Sair\n1 a 50 - Numero de rodadas\n');
   stdout.writeln(
       'Limitamos o numero de rodadas em 50 para não ficar muito exaustivo\n');
@@ -63,10 +67,12 @@ void main() {
     print('------------------------------------------------------');
     // Vez do usuário
     usuario = dadosComuns(gerador);
+    print('Soma dos dados de $nomeUsuario: $usuario');
     // Vez do computador
     computador = dadosComuns(gerador);
+    print('Soma dos dados do computador: $computador');
     if (usuario > computador) {
-      print('Usuario venceu!');
+      print('$nomeUsuario venceu!');
       placarUsuario++;
     } else if (usuario < computador) {
       print('Computador venceu!');
@@ -76,17 +82,17 @@ void main() {
       placarEmpate++;
     }
     print(
-        'Placar da Rodada:\nUsuario: $placarUsuario \tComputador: $placarComputador \tEmpates: $placarEmpate');
+        '\nPlacar da Rodada:\n$nomeUsuario: $placarUsuario \tComputador: $placarComputador \tEmpates: $placarEmpate');
   }
   // Exibir placar final
   print('\n\n*************************************************');
   print(
-      '*  Placar final: \t\t\t\t*\n*  Usuario: $placarUsuario \tComputador: $placarComputador \tEmpates: $placarEmpate      *');
+      '*  Placar final: \t\t\t\t*\n*  $nomeUsuario: $placarUsuario \tComputador: $placarComputador \tEmpates: $placarEmpate      *');
   print('*************************************************');
 
   // Exibir vencedor
   if (placarUsuario > placarComputador) {
-    print('Usuario venceu!  ( • ᴗ • )');
+    print('$nomeUsuario venceu!  ( • ᴗ • )');
   } else if (placarUsuario < placarComputador) {
     print('Computador venceu!  (╥﹏╥)');
   } else if (placarUsuario < placarEmpate ||
