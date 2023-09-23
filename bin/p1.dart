@@ -33,7 +33,6 @@ void main() {
   var gerador = Random();
   int opcao;
   String nomeUsuario;
-  int soma;
 
   // Exibir menu de opções
   stdout.writeln('Digite seu nome:');

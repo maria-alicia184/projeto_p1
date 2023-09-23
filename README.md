@@ -1,7 +1,3 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
-
-
 Integrantes:
 Bruna Aparecida Barbosa dos Santos  RA: 2040482122039
 Giulia Mariah Soares    RA: 2040482122013
